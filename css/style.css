@@ -540,6 +540,7 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 80px;
 }
 .voice__box--02 {
   -webkit-box-orient: horizontal;
@@ -549,6 +550,21 @@ html {
 }
 .voice__imgBox, .voice__textBox {
   max-width: 520px;
+}
+.voice__head {
+  font-size: var(--l);
+  margin-bottom: 0.5em;
+}
+.voice__company {
+  font-size: var(--lm);
+  margin-bottom: 0.5em;
+  display: inline-block;
+}
+.voice__text {
+  font-size: var(--m);
+}
+.voice__plan {
+  font-size: var(--ms);
 }
 
 /*block--modifireから子孫のblock__elementを変更*/

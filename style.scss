@@ -586,12 +586,28 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
   &__box{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 80px;
     &--02{
       flex-flow: row-reverse;
     }
   }
   &__imgBox, &__textBox{
     max-width: 520px;
+  }
+  &__head{
+    font-size: var(--l);
+    margin-bottom: 0.5em;
+  }
+  &__company{
+    font-size: var(--lm);
+    margin-bottom: 0.5em;
+    display: inline-block;
+  }
+  &__text{
+    font-size: var(--m);
+  }
+  &__plan{
+    font-size: var(--ms);
   }
 }
 
