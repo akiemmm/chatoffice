@@ -582,5 +582,17 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     }
   }
 }
+.voice {
+  &__box{
+    display: flex;
+    justify-content: space-between;
+    &--02{
+      flex-flow: row-reverse;
+    }
+  }
+  &__imgBox, &__textBox{
+    max-width: 520px;
+  }
+}
 
 /*block--modifireから子孫のblock__elementを変更*/

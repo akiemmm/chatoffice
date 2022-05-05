@@ -533,5 +533,23 @@ html {
   font-size: var(--xl);
 }
 
+.voice__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.voice__box--02 {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-flow: row-reverse;
+          flex-flow: row-reverse;
+}
+.voice__imgBox, .voice__textBox {
+  max-width: 520px;
+}
+
 /*block--modifireから子孫のblock__elementを変更*/
 /*# sourceMappingURL=style.css.map */
