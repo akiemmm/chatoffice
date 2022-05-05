@@ -64,6 +64,8 @@ html{
   border-radius: 8px;
   font-weight: bold;
   text-decoration: none;
+  cursor: pointer;
+  transition: all 0.5s;
   &:hover, &:focus {
     text-decoration: underline;
     opacity: .8;
@@ -82,10 +84,52 @@ html{
   }
 }
 .ttl{
+  position: relative;
   font-size: var(--xl);
   font-weight: bold;
   margin-bottom: 40px;
   text-align: center;
+  z-index: 1;
+  &--func{
+    &::after{
+      content:"";
+      position: absolute;
+      top: calc(50% + 0.2em);
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgb(56,124,170);
+      background: linear-gradient(90deg, rgba(56,124,170,1) 0%, rgba(86,167,191,1) 60.58%, rgba(98,184,199,1) 84.397%, rgba(106,195,204,1) 100%); 
+      height: 20px;
+      padding: 0 1em;
+      z-index: -1;
+    }
+  }
+  &--room{
+    &::after{
+      width: 8em;
+    }
+  }
+  &--chat{
+    &::after{
+      width:10em;
+    }
+  }
+  &--schedule{
+    &::after{
+      width:12em;
+    }
+  }
+  &--vr{
+    color: var(--white);
+    &::after{
+      width:6em;
+    }
+  }
+  &--etcOpen{
+    &::after{
+      width:12em;
+    }
+  }
 }
 .subTtl {
   font-size: var(--l);
@@ -125,6 +169,7 @@ html{
     background: var(--mainColor);
     min-height:160px;
     padding: 12px;
+    color: var(--white);
   }
   &__ttl{
     font-size: var(--lm);
@@ -290,6 +335,7 @@ html{
 .sec{
   min-height: 100vh;
   padding: 80px 0;
+
   &--mv{
     min-height: auto;
     height: 100vh;
@@ -330,18 +376,19 @@ html{
   }
   &--about{
     min-height: 50vh;
-    background:
-    linear-gradient(to top right,  #377DAA,#53c1C1 50%),
-    linear-gradient(to top left,  #53c1C1, #377DAA 50%),
-    linear-gradient(to bottom left,#377DAA, #53c1C1 50%),
-    linear-gradient(to bottom right, #53c1C1, #377DAA 50%);
+
+    background-color:#387caa;
+background-image:
+radial-gradient(at 10% 100%, #6ac3cc 0px, transparent 50%),
+radial-gradient(at 90% 100%, #387caa 0px, transparent 50%),
+radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     color: var(--white);
   }
   &--room{
 
   }
   &--chat{
-
+    background: var(--backPaleBlue);
   }
   &--schedule{
     min-height: 50vh;
@@ -350,8 +397,12 @@ html{
   }
   &--vr{
     min-height: 50vh;
-
-
+    background-color:#1f344c;
+    background-image:
+    radial-gradient(at 10% 100%, #1f6860 0px, transparent 50%),
+    radial-gradient(at 90% 100%, #1f344c 0px, transparent 50%),
+    radial-gradient(at 90% 10%, #1f6860 0px, transparent 50%);
+        color: var(--white);
   }
   &--etc{
     min-height: 50vh;
@@ -363,7 +414,12 @@ html{
   }
   &--cv{
     min-height: 50vh;
-
+  }
+  &--cv01{
+    background: var(--backPaleBlue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &--voice{
   
@@ -516,6 +572,14 @@ html{
     font-size: var(--lm);
     text-align: center;
      
+  }
+}
+.cv01{
+  &__ttl{
+    font-size: var(--l);
+    &--large{
+      font-size: var(--xl);
+    }
   }
 }
 
