@@ -137,7 +137,10 @@ html {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  color: --whitef;
+}
+.card--plan {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 .card__list {
   list-style: none;
@@ -380,6 +383,7 @@ html {
 }
 .sec--plan {
   min-height: 50vh;
+  background: var(--backPaleBlue);
 }
 
 /*blockがセクション名（mv、problemなど）*/
@@ -567,5 +571,35 @@ html {
   font-size: var(--ms);
 }
 
+/*忘れずにvoice　入れること*/
 /*block--modifireから子孫のblock__elementを変更*/
+.card--plan .card__list {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+.card--plan .card__item {
+  background: var(--white);
+  width: calc((100% - 100px) / 3);
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 320px;
+}
+.card--plan .card__item:nth-child(odd) {
+  margin-right: 0;
+}
+.card--plan .card__item:nth-child(-n+2) {
+  margin-bottom: 0;
+}
 /*# sourceMappingURL=style.css.map */

@@ -140,8 +140,9 @@ html{
 .card{
   display: flex;
   flex-wrap: wrap;
-  color: --whitef;
-
+  &--plan{
+    flex-wrap: nowrap;
+  }
   &__list{
     list-style: none;
     display: flex;
@@ -426,7 +427,7 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
   }
   &--plan {
     min-height: 50vh;
-
+    background: var(--backPaleBlue);
   }
 }
 /*blockがセクション名（mv、problemなど）*/
@@ -610,5 +611,31 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     font-size: var(--ms);
   }
 }
+/*忘れずにvoice　入れること*/
 
+.plan{
+
+}
 /*block--modifireから子孫のblock__elementを変更*/
+.card--plan {
+  .card__list{
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .card__item{
+    background: var(--white);
+    width:calc((100% - 100px) / 3);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height:320px;
+    &:nth-child(odd){
+      margin-right: 0;
+    }
+    &:nth-child(-n+2){
+      margin-bottom: 0;
+    }
+  }
+}
