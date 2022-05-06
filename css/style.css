@@ -42,22 +42,15 @@ html {
 }
 
 .btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   color: var(--white);
   border: none;
   border-radius: 8px;
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 .btn:hover, .btn:focus {
@@ -96,10 +89,8 @@ html {
   position: absolute;
   top: calc(50% + 0.2em);
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   background: #387caa;
-  background: -webkit-gradient(linear, left top, right top, from(#387caa), color-stop(60.58%, #56a7bf), color-stop(84.397%, #62b8c7), to(#6ac3cc));
   background: linear-gradient(90deg, #387caa 0%, #56a7bf 60.58%, #62b8c7 84.397%, #6ac3cc 100%);
   height: 20px;
   padding: 0 1em;
@@ -132,23 +123,17 @@ html {
 }
 
 .card {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  color: --whitef;
+  flex-wrap: wrap;
+}
+.card--plan {
+  flex-wrap: nowrap;
 }
 .card__list {
   list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding-left: 0;
 }
 .card__item {
@@ -201,14 +186,10 @@ html {
 
 /*nav系*/
 .nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .navList {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   list-style: none;
 }
@@ -225,12 +206,8 @@ html {
 
 /*footerとheader*/
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   position: fixed;
   top: 0;
   z-index: 100;
@@ -238,26 +215,19 @@ html {
   background: var(--white);
   width: 100%;
   padding: 20px 40px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 .header--sp {
   display: none;
 }
 .header__inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
 }
 .header__navItem {
-  margin-right: calc((40 / 1920)* 100vw);
+  margin-right: 2.0833333333vw;
   font-size: var(--m);
 }
 .footer {
@@ -265,27 +235,20 @@ html {
   color: var(--white);
 }
 .footer__inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   height: 100px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 .footer__company {
   font-size: var(--lm);
 }
 .footer__navItem {
-  margin-right: calc((40 / 1920)* 100vw);
+  margin-right: 2.0833333333vw;
 }
 .footer__navLink {
   color: var(--white);
@@ -312,15 +275,9 @@ html {
 }
 .sec--lead {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   background-image: url(../img/lead_back.png);
   background-size: 1600px 1200px;
   -webkit-animation: bg-Loop 60s linear infinite;
@@ -368,18 +325,13 @@ html {
 }
 .sec--cv01 {
   background: var(--backPaleBlue);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 .sec--plan {
   min-height: 50vh;
+  background: var(--backPaleBlue);
 }
 
 /*blockがセクション名（mv、problemなど）*/
@@ -387,8 +339,7 @@ html {
   position: absolute;
   top: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
@@ -397,8 +348,7 @@ html {
   position: absolute;
   top: 200px;
   left: 40px;
-  -webkit-transform: rotate(-9.75deg);
-          transform: rotate(-9.75deg);
+  transform: rotate(-9.75deg);
   font-size: 120px;
   line-height: 1.25;
   color: var(--white);
@@ -417,12 +367,8 @@ html {
 }
 
 .problem__box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin-bottom: 80px;
 }
 .problem__boxOffice {
@@ -458,8 +404,7 @@ html {
 .problemBoxOffice__img--balloon03 {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   right: 20px;
 }
 
@@ -482,21 +427,14 @@ html {
 .problemBoxRemote__img--balloon03 {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   left: 20px;
 }
 
 .again__box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  justify-content: space-between;
+  align-items: flex-end;
   margin-bottom: 40px;
 }
 .again__boxOffice, .again__boxRemote {
@@ -533,5 +471,26 @@ html {
   font-size: var(--xl);
 }
 
+/*忘れずにvoice　入れること*/
 /*block--modifireから子孫のblock__elementを変更*/
+.card--plan .card__list {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+}
+.card--plan .card__item {
+  background: var(--white);
+  width: calc((100% - 100px) / 3);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 320px;
+}
+.card--plan .card__item:nth-child(odd) {
+  margin-right: 0;
+}
+.card--plan .card__item:nth-child(-n+2) {
+  margin-bottom: 0;
+}
 /*# sourceMappingURL=style.css.map */
