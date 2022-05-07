@@ -82,6 +82,13 @@ html {
   margin: 0 auto;
 }
 
+.btn--plan {
+  background: var(--mainColor);
+  height: 50px;
+  width: 185px;
+  margin: 0 auto;
+}
+
 .ttl {
   position: relative;
   font-size: var(--xl);
@@ -390,15 +397,29 @@ html {
 
 .mv__title {
   position: absolute;
-  top: 200px;
-  left: 40px;
+  top: 140px;
+  left: 20px;
   transform: rotate(-9.75deg);
+  transform-origin: top right;
   font-size: 120px;
   line-height: 1.25;
   color: var(--white);
   font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro",  "MS Pゴシック", "MS PGothic", sans-serif;
   font-weight: bold;
   letter-spacing: -0.1em;
+  z-index: 10;
+}
+
+@media (max-width: 1400px) {
+  .mv__title {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .mv__title {
+    font-size: 80px;
+  }
 }
 
 .mv__text {
@@ -520,15 +541,47 @@ html {
   text-align: center;
 }
 
-.cv01__ttl {
+.cv__ttl {
   font-size: var(--l);
 }
 
-.cv01__ttl--large {
+.cv__ttl--large {
   font-size: var(--xl);
 }
 
-/*忘れずにvoice　入れること*/
+.voice__box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.voice__box--02 {
+  flex-flow: row-reverse;
+}
+
+.voice__imgBox, .voice__textBox {
+  max-width: 520px;
+}
+
+.voice__head {
+  font-size: var(--l);
+  margin-bottom: 0.5em;
+}
+
+.voice__company {
+  font-size: var(--lm);
+  margin-bottom: 0.5em;
+  display: inline-block;
+}
+
+.voice__text {
+  font-size: var(--m);
+}
+
+.voice__plan {
+  font-size: var(--ms);
+}
+
 /*block--modifireから子孫のblock__elementを変更*/
 .card--plan .card__list {
   flex-wrap: nowrap;
@@ -543,6 +596,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 40px 0;
   min-height: 320px;
 }
 
@@ -552,4 +606,30 @@ html {
 
 .card--plan .card__item:nth-child(-n+2) {
   margin-bottom: 0;
+}
+
+.card--plan .card__ttl {
+  font-size: var(--l);
+  margin-bottom: 10px;
+}
+
+.card--plan .card__text {
+  font-size: var(--m);
+  margin-bottom: 8px;
+}
+
+.card--plan .card__price {
+  font-size: var(--lm);
+  margin-bottom: 10px;
+}
+
+.card--plan .card__priceNumber {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.card--plan .card__annotation {
+  display: inline-block;
+  font-size: 14px;
+  margin-bottom: 1rem;
 }

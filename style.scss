@@ -35,6 +35,12 @@
   font-size: var(--l);
   margin: 0 auto;
 }
+@mixin btn--plan{
+  background: var(--mainColor);
+  height: 50px;
+  width: 185px;
+  margin: 0 auto;
+}
 /*base*/
 html{
   font-size: var(--ms);
@@ -77,10 +83,10 @@ html{
     @include btn--cv;
   }
   &--etc{
-    @include btn--etc
+    @include btn--etc;
   }
-  &__inner{
-
+  &--plan{
+    @include btn--plan;
   }
 }
 .ttl{
@@ -443,15 +449,23 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     }
     &__title{
       position: absolute;
-      top: 200px;
-      left: 40px;
+      top: 140px;
+      left: 20px;
       transform:rotate(-9.75deg);
+      transform-origin: top right;
       font-size: 120px;
       line-height: 1.25;
       color: var(--white);
       font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro",  "MS Pゴシック", "MS PGothic", sans-serif;
       font-weight: bold;
       letter-spacing: -0.1em;
+      z-index:10;
+      @media(max-width: 1400px){
+        font-size: 100px;
+      }
+      @media(max-width: 1280px){
+        font-size: 80px;
+      }
     }
     &__text{
       position: absolute;
@@ -575,7 +589,7 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
      
   }
 }
-.cv01{
+.cv{
   &__ttl{
     font-size: var(--l);
     &--large{
@@ -611,11 +625,7 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     font-size: var(--ms);
   }
 }
-/*忘れずにvoice　入れること*/
 
-.plan{
-
-}
 /*block--modifireから子孫のblock__elementを変更*/
 .card--plan {
   .card__list{
@@ -630,6 +640,7 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 40px 0;
     min-height:320px;
     &:nth-child(odd){
       margin-right: 0;
@@ -638,4 +649,27 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
       margin-bottom: 0;
     }
   }
+  .card__ttl{
+    font-size: var(--l);
+    margin-bottom: 10px;
+  }
+  .card__text{
+    font-size: var(--m);
+    margin-bottom: 8px;
+
+  }
+  .card__price{
+    font-size: var(--lm);
+    margin-bottom: 10px;
+  }
+  .card__priceNumber{
+    font-size: 36px;
+    font-weight: bold;
+  }
+  .card__annotation{
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 1rem;
+  }
+  
 }
