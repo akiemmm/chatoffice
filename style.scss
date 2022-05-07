@@ -16,22 +16,39 @@
   --ms :16px;
   --s: 12px;
 }
+$lt: 1280px;
+$miniLt: 1024px;
+$tb: 768px;
+$miniTb: 600px;
+$spPlus: 428px;
+$sp: 375px;
+
+
 @mixin btn--head{
   background: var(--accentColor);
   height: 48px;
   width: 200px;
+  @media (max-width:1024px)
+  {
+    height: 80px;
+    max-width: 320px;
+    font-size: var(--lm);
+    margin: 0 auto;
+  }
 }
 @mixin btn--cv{
   background: var(--accentColor);
   height: 80px;
-  width: 320px;
+  max-width: 320px;
+  width: 100%;
   font-size: var(--lm);
   margin: 0 auto;
 }
 @mixin btn--etc{
   background: var(--subColor);
   height: 80px;
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
   font-size: var(--l);
   margin: 0 auto;
 }
@@ -41,6 +58,7 @@
   width: 185px;
   margin: 0 auto;
 }
+
 /*base*/
 html{
   font-size: var(--ms);
@@ -51,16 +69,44 @@ html{
 /*Block*/
 /*機能としてのブロック*/
 .pc{
-  @media (max-width:1024px){
+  @media (max-width:$tb){
     display: none;
+  }
+}
+.tb{
+  display: none;
+  @media (max-width:$tb){
+    display: block;
   }
 }
 .sp{
   display: none;
-  @media (max-width:1024px){
-    display: block;
+  @media (max-width:$spPlus){
+    ditblay: block;
   }
 }
+.br{
+  &--sp{
+    display: none;
+    @media(max-width:$spPlus){
+      display: inline;
+    }
+  }
+  &--tb{    
+    display: none;
+    @media(max-width:$tb){
+      display: inline;
+    }
+  }
+  &--miniLt{    
+    display: none;
+    @media(max-width:$miniLt){
+      display: inline;
+    }
+  }
+
+}
+
 .btn{
   display: flex;
   align-items: center;
@@ -78,6 +124,7 @@ html{
   }
   &--head{
     @include btn--head;
+    //1024px以下はheadar-menu内に格納されている
   }
   &--cv{
     @include btn--cv;
@@ -96,6 +143,9 @@ html{
   margin-bottom: 40px;
   text-align: center;
   z-index: 1;
+  @media(max-width: $miniTb){
+    font-size: var(--l);
+  }
   &--func{
     &::after{
       content:"";
@@ -109,6 +159,7 @@ html{
       padding: 0 1em;
       z-index: -1;
     }
+
   }
   &--room{
     &::after{
@@ -142,10 +193,18 @@ html{
   font-weight: bold;
   margin-bottom: 20px;
   text-align: center;
+  @media(max-width: $miniTb){
+    font-size: var(--lm);
+  }
 }
 .card{
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
+  @media (max-width: $tb){
+    flex-flow: column;
+
+  }
   &--plan{
     flex-wrap: nowrap;
   }
@@ -155,16 +214,33 @@ html{
     flex-wrap: wrap;
     justify-content: space-between;
     padding-left: 0;
+    width: 100%;
+    @media (max-width: $tb){
+      flex-flow: column;
+      align-items: center;
+    }
   }
   &__item{
     max-width:520px;
-    width: calc(50% - 40px);
+    width: calc(50% - 20px);
+    @media (max-width: $tb){
+      max-width: 600px;
+      width: 100%;
+      margin: 0 auto 40px;
+     }
     &:nth-child(-n+2){
       margin-bottom: 40px;
+      @media (max-width: $tb){
+        margin: 0 auto 40px;
+      }
     }
     &:nth-child(odd){
-      margin-right: 80px;
+      margin-right: 40px;
+      @media (max-width: $tb){
+        margin: 0 auto 40px;
+      }
     }
+
   }
   &__imgBox{
     width: 100%;
@@ -183,9 +259,27 @@ html{
     font-weight: bold;
     text-align: center;
     margin-bottom: 8px;
+    @media(max-width: $miniLt){
+      font-size: var(--m);
+    }
+    @media(max-width: $tb){
+      font-size: var(--lm);
+    }
+    @media(max-width: $spPlus){
+      font-size: var(--m);
+    }
   }
   &__text{
     font-size: var(--m);
+    @media(max-width: $miniLt){
+      font-size: var(--ms);
+    }
+    @media(max-width: $tb){
+      font-size: var(--m);
+    }
+    @media(max-width: $spPlus){
+      font-size: var(--ms);
+    }
   }
 }
 .card--vr {
@@ -196,24 +290,90 @@ html{
 
 .icon{
   &--hamburger{
-
+    background: transparent;
+    cursor: pointer;
+    padding-bottom: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    z-index: 199;
   }
   &--close{
-
+    box-sizing: border-box;
+    background-color: transparent;
+    cursor: pointer;
+    height: 64px;
+    width: 64px;
+    position: fixed;
+    top: 0;
+    right: 10px;
+    z-index: 200;
+    border: none;
   }
   &__bar{
-
   }
 
 }
 .icon--hamburger{
-  .icon__bar{
+  border: none;
 
+  .icon__bar{
+    background: var(--mainColor);
+    display: block;
+    height: 8px;
+    position: absolute;
+    top: 40%;
+    right: 0;
+    width: 40px;
+    &:before, &:after{
+      content: "";
+      background: var(--mainColor);
+      height: 100%;
+      left: 50%;
+      margin: 0 0 0 -50%;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+    }
+    &::before{
+      margin-top: -48%;
+    }
+    &::after{
+      margin-top: 28%;
+    }
   }
 }
 .icon--close{
   .icon__bar{
-    
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    vertical-align: bottom;
+    &:before, &:after{
+      display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 42px;
+    margin: -76% 0 0 -10%;
+    background: var(--white);
+    }
+    &::before{
+      transform: rotate(-45deg);
+    }
+    &::after{
+      transform: rotate(45deg);
+    }
   }
 }
 .container{
@@ -221,6 +381,7 @@ html{
   padding: 0 20px;
   width: 100%;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 /*list、item*/
 .list {
@@ -233,6 +394,7 @@ html{
 .navList {
   display: flex;
   list-style: none;
+  padding-left: 0;
 }
 .navItem {
 }
@@ -258,8 +420,18 @@ html{
   width: 100%;
   padding: 20px 40px; 
   box-sizing: border-box;
+  @media(max-width: $miniLt){
+    display: none;
+  }
   &--sp{
     display: none;
+    @media(max-width: $miniLt){
+      display: flex;
+      align-items: center;
+      height: 64px;
+      width: 100%;
+      padding: 8px 20px;
+    }
   }
   &__inner{
     display: flex;
@@ -279,15 +451,69 @@ html{
   &__nav{
   }
   &__navList{
+    padding-left: calc((40 / 1920)* 100vw);
+    @media(max-width: $lt){
+      padding-left: calc((20 / 1920)* 100vw);
+    }
   }
   &__navItem{
     margin-right: calc((40 / 1920)* 100vw);
     font-size: var(--m);
+    @media(max-width: $lt){
+      margin-right: calc((20 / 1920)* 100vw);
+      font-size: var(--ms);
+    }
   }
   &__navLink{
 
   }
 }
+/*.header--spの子要素に使用*/
+.header--sp {
+  .header__logo{
+    width: 200px;
+  }
+
+  .header__menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+
+    width: 100vw;
+    min-height: 100vh;
+    padding: 104px 40px 40px 40px ;
+    background: var(--subColor);
+    &.is-open{
+      animation: hamburger-open .5s ease;
+      opacity: 1;
+      visibility: visible;
+
+    }
+  }
+
+  .header__nav{
+    flex-flow: column;
+  }
+  .header__navList{
+    flex-flow: column;
+    align-items: center;
+  }
+  .header__navItem{
+    margin:0 auto 2em;
+    font-size: var(--lm);
+  }
+  .header__navLink{
+    color: var(--white);
+  }
+
+}
+
+
+
+
 .footer{
   background: var(--backGray);
   color: var(--white);
@@ -300,17 +526,32 @@ html{
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
-
+  @media(max-width: $miniLt){
+    height: 80px;
+    padding: 0;
+  }
   }
   &__company{
     font-size: var(--lm);
+    font-weight: bold;
+    @media(max-width: $lt){
+      font-size: var(--m);
+    }
+    @media(max-width: $miniLt){
+      font-size: var(--ms);
+    }
   }
   &__nav{
   }
   &__navList{
+    padding-left: calc((16 / 1920)* 100vw);
   }
-  &__navItem{
+  &__navItem:not(:last-child){
     margin-right: calc((40 / 1920)* 100vw);
+    @media(max-width: $miniLt){
+      margin-right: calc((16 / 1920)* 100vw);
+      font-size: 14px;
+    }
   }
   &__navLink{
     color: var(--white);
@@ -320,29 +561,22 @@ html{
     width: 100%;
     text-align: center;
     padding: 20px 0;
-
+    @media(max-width: $miniLt){
+  
+      font-size: var(--s);
+    }
   }
 }
-/*.header--spの子要素に使用*/
-.header--sp {
-  .header__nav{
-    
-  }
-  .header__navList{
 
-  }
-  .header__navItem{
 
-  }
-  .header__navLink{
-    
-  }
-}
+
 /*レイアウトとしてのblock、block&__element、block&__element&--modifier もしくはblock&--modifier*/
 .sec{
   min-height: 100vh;
   padding: 80px 0;
-
+  @media(max-width: $spPlus){
+    padding: 40px 0;
+  }
   &--mv{
     min-height: auto;
     height: 100vh;
@@ -377,6 +611,7 @@ html{
     background: var(--backGray);
     color: var(--white);
 
+
   }
   &--again{
 
@@ -399,8 +634,6 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
   }
   &--schedule{
     min-height: 50vh;
-
-
   }
   &--vr{
     min-height: 50vh;
@@ -413,8 +646,9 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
   }
   &--etc{
     min-height: 50vh;
-
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &--etcOpen{
 
@@ -463,8 +697,23 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
       @media(max-width: 1400px){
         font-size: 100px;
       }
-      @media(max-width: 1280px){
+      @media(max-width: $lt){
         font-size: 80px;
+      }
+      @media(max-width: $miniLt){
+        top: 84px;
+        font-size: 64px;
+      }
+      @media(max-width: $miniTb){
+        top: 80px;
+        left: 0;
+        font-size: 56px;
+      }
+      @media(max-width: $spPlus){
+        font-size: 48px;
+      }
+      @media(max-width: $sp){
+        font-size: 40px;
       }
     }
     &__text{
@@ -475,6 +724,17 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
       color: var(--white);
       letter-spacing: -0.08em;
       font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro",  "MS Pゴシック", "MS PGothic", sans-serif;
+      @media(max-width: $miniLt){
+        font-size: var(--l);
+        bottom: 20px;
+        right: 20px; 
+      }
+      @media(max-width: $miniTb){
+        font-size: var(--lm);
+      }
+      @media(max-width: $spPlus){
+        font-size: var(--m);
+      }
     }
 }
 
@@ -483,20 +743,34 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     display: flex;
     justify-content: space-between;
     margin-bottom: 80px;
+    @media(max-width:$tb){
+      flex-flow: column;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 40px;
+    }
   }
   &__boxOffice{
     position: relative;
     width: calc((100% - 27px) / 2);
+    @media(max-width:$tb){
+      width: 100%;
+    }
   }
   &__boxRemote{
     position: relative;
     width: calc((100% - 27px) / 2);
-
+    @media(max-width:$tb){
+      width: 100%;
+    }
   }
   &__text{
     text-align: center;
     font-size: var(--xl);
     font-weight: bold;
+    @media(max-width:$miniTb){
+      font-size: var(--l);
+     }
   }
 }
 .problemBoxOffice__img{
@@ -505,6 +779,7 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     bottom: 0;
     left:0;
     max-width: 480px;
+    width: calc(100% - 50px); 
   }
   &--balloon01{
     position: absolute;
@@ -515,14 +790,32 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     position: absolute;
     top: 10px;
     right: 40px;
-
+    @media(max-width:$miniLt){
+      top: calc(10px + 15%);
+      right: 30px;
+      width: calc(50% - 30px);
+     }
   }
   &--balloon03{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 20px;
+    @media(max-width:$lt){
+      top: calc(50% + 10px);
+      width: calc(50% - 20px);
+    }
+    @media(max-width:$miniLt){
+      top: auto;
+      bottom: 16%;  
+     }
   }
+  &--balloonTb{
+    max-width: 670px;
+    width: 100%;
+    margin:  0 auto 40px;
+  }
+
   
 }
 .problemBoxRemote__img{
@@ -531,6 +824,7 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     bottom: 0;
     right: 0;
     max-width: 480px;
+    width: calc(100% - 50px);
   }
   &--balloon01{
     position: absolute;
@@ -541,20 +835,49 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     position: absolute;
     top: 14px;
     left: 60px;
+    @media(max-width:$miniLt){
+      top: calc(14px + 15%);
+      left: 40px;
+      width: calc(50% - 30px);
+     }
   }
   &--balloon03{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 20px;
+    @media(max-width:$lt){
+      top: calc(50% + 10px);
+      width: calc(50% - 20px);
+    }
+    @media(max-width:$miniLt){
+      top: auto;
+      bottom: 16%; 
+     }
   }
+  &--balloonTb{
+    max-width: 670px;
+    width: 100%;
+    margin: 40px auto 0;
+  }
+
 }
 .again {
+  @media (max-width: $tb){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   &__box{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 40px;
+    &--pc{
+      @media (max-width: $tb){
+      display: none;
+      }
+    }
   }
   &__boxOffice, &__boxRemote{
     position: relative;
@@ -564,13 +887,17 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     text-align: center;
     font-size: var(--lm);
     margin-bottom: 40px;
+    @media (max-width: $miniTb){
+      font-size: var(--m);
+      }
   }
 
 }
 .againBoxOffice__img{
   &--people{
     margin-right: auto;
-    max-width: 470px;
+    max-width: 490px;
+    width: calc(100% - 20px);
     display: block;
   }
 }
@@ -578,6 +905,7 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
   &--people{
     margin-left: auto;
     max-width: 490px;
+    width: calc(100% - 20px);
     display: block;
 
   }
@@ -586,14 +914,21 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
   &__text{
     font-size: var(--lm);
     text-align: center;
+    @media (max-width: $miniTb){
+      font-size: var(--m);
+      }
      
   }
+
 }
 .cv{
   &__ttl{
-    font-size: var(--l);
+    font-size: var(--xl);
+    @media(max-width: $miniLt){
+      font-size: var(--l);
+    }
     &--large{
-      font-size: var(--xl);
+      font-size: 1.5em;
     }
   }
 }
@@ -604,26 +939,76 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     margin-bottom: 80px;
     &--02{
       flex-flow: row-reverse;
+      @media(max-width: $tb){
+        flex-flow: column;
+      }
+    }
+    @media(max-width: $tb){
+      flex-flow: column;
     }
   }
   &__imgBox, &__textBox{
     max-width: 520px;
+    width: calc((100% - 40px) / 2);
+    @media(max-width: $miniLt){
+      width: calc((100% - 20px) / 2);
+    }
+    @media(max-width: $tb){
+      width: 100%;
+      max-width: 670px;
+      margin: 0 auto;
+    }
+  }
+  &__imgBox{
+    margin-right: 40px;
+    &--02{
+      margin-right:0;
+    }
+    @media(max-width: $miniLt){
+      margin-right: 20px;
+      &--02{
+        margin-right:0;
+      }
+    }
+    @media(max-width: $tb){
+     margin: 0 auto 20px;
+    }
+  }
+  &__textBox--02{
+    margin-right: 40px;
+    @media(max-width: $miniLt){
+      margin-right: 20px;
+    }
   }
   &__head{
     font-size: var(--l);
     margin-bottom: 0.5em;
+    @media(max-width: $miniLt){
+      font-size: 22px;
+    }
   }
   &__company{
     font-size: var(--lm);
     margin-bottom: 0.5em;
     display: inline-block;
-  }
-  &__text{
-    font-size: var(--m);
+    @media(max-width: $miniLt){
+      font-size: var(--m)
+    }
   }
   &__plan{
     font-size: var(--ms);
+    @media(max-width: $miniLt){
+      font-size: 13px;
+    }
   }
+  &__text{
+    font-size: var(--m);
+    @media(max-width: $miniLt){
+      font-size: var(--ms)
+    }
+
+  }
+
 }
 
 /*block--modifireから子孫のblock__elementを変更*/
@@ -640,7 +1025,8 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0;
+    padding: 40px 20px;
+    max-width: 320px;
     min-height:320px;
     &:nth-child(odd){
       margin-right: 0;
@@ -648,23 +1034,45 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     &:nth-child(-n+2){
       margin-bottom: 0;
     }
+    @media(max-width:$lt){
+      width: calc((100% - 40px) / 3);
+    }
+    @media(max-width:$miniLt){
+      min-height: 240px;
+      padding:20px 10px;
+    }
   }
   .card__ttl{
     font-size: var(--l);
     margin-bottom: 10px;
+    @media(max-width:$lt){
+      font-size: var(--lm);
+    }
+    @media(max-width:$miniLt){
+      font-size: var(--m);
+    }
   }
   .card__text{
     font-size: var(--m);
     margin-bottom: 8px;
+    @media(max-width:$miniLt){
+      font-size: var(--ms);
+    }
 
   }
   .card__price{
     font-size: var(--lm);
     margin-bottom: 10px;
+    @media(max-width:$miniLt){
+      font-size: var(--m);
+    }
   }
   .card__priceNumber{
     font-size: 36px;
     font-weight: bold;
+    @media(max-width:$miniLt){
+      font-size: var(--l);
+    }
   }
   .card__annotation{
     display: inline-block;
