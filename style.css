@@ -56,8 +56,28 @@ html {
   display: none;
 }
 
-@media (max-width: 428px) {
+@media (max-width: 375px) {
   .br--sp {
+    display: inline;
+  }
+}
+
+.br--spPlus {
+  display: none;
+}
+
+@media (max-width: 428px) {
+  .br--spPlus {
+    display: inline;
+  }
+}
+
+.br--miniTb {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .br--miniTb {
     display: inline;
   }
 }
@@ -79,6 +99,12 @@ html {
 @media (max-width: 1024px) {
   .br--miniLt {
     display: inline;
+  }
+}
+
+@media (max-width: 428px) {
+  .br--noSp {
+    display: none;
   }
 }
 
@@ -156,6 +182,12 @@ html {
   }
 }
 
+@media (max-width: 428px) {
+  .ttl {
+    font-size: var(--lm);
+  }
+}
+
 .ttl--func::after {
   content: "";
   position: absolute;
@@ -169,16 +201,40 @@ html {
   z-index: -1;
 }
 
+@media (max-width: 428px) {
+  .ttl--func::after {
+    width: 100%;
+  }
+}
+
 .ttl--room::after {
   width: 8em;
+}
+
+@media (max-width: 428px) {
+  .ttl--room::after {
+    width: 100%;
+  }
 }
 
 .ttl--chat::after {
   width: 10em;
 }
 
+@media (max-width: 428px) {
+  .ttl--chat::after {
+    width: 100%;
+  }
+}
+
 .ttl--schedule::after {
   width: 12em;
+}
+
+@media (max-width: 428px) {
+  .ttl--schedule::after {
+    width: 100%;
+  }
 }
 
 .ttl--vr {
@@ -189,8 +245,20 @@ html {
   width: 6em;
 }
 
+@media (max-width: 428px) {
+  .ttl--vr::after {
+    width: 100%;
+  }
+}
+
 .ttl--etcOpen::after {
   width: 12em;
+}
+
+@media (max-width: 428px) {
+  .ttl--etcOpen::after {
+    width: 100%;
+  }
 }
 
 .subTtl {
@@ -582,7 +650,6 @@ html {
 @media (max-width: 768px) {
   .footer {
     padding: 40px 20px;
-    min-height: 50vh;
   }
 }
 
@@ -936,6 +1003,12 @@ html {
   }
 }
 
+@media (max-width: 428px) {
+  .problem__text {
+    font-size: var(--lm);
+  }
+}
+
 .problemBoxOffice__img--people {
   position: absolute;
   bottom: 0;
@@ -1135,6 +1208,12 @@ html {
   font-size: 1.5em;
 }
 
+.card__img--border {
+  border-width: 1px 1px 0 1px;
+  border-color: #B7BDC8;
+  border-style: solid;
+}
+
 .voice__box {
   display: flex;
   justify-content: space-between;
@@ -1240,6 +1319,12 @@ html {
 @media (max-width: 600px) {
   .voice__head {
     font-size: 22px;
+  }
+}
+
+@media (max-width: 428px) {
+  .voice__head {
+    letter-spacing: -0.05em;
   }
 }
 

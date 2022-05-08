@@ -89,7 +89,19 @@ html{
 .br{
   &--sp{
     display: none;
+    @media(max-width:$sp){
+      display: inline;
+    }
+  }
+  &--spPlus{
+    display: none;
     @media(max-width:$spPlus){
+      display: inline;
+    }
+  }
+  &--miniTb{    
+    display: none;
+    @media(max-width:$miniTb){
       display: inline;
     }
   }
@@ -105,7 +117,11 @@ html{
       display: inline;
     }
   }
-
+  &--noSp{    
+    @media(max-width:$spPlus){
+      display: none;
+    }
+  }
 }
 
 .btn{
@@ -147,6 +163,9 @@ html{
   @media(max-width: $miniTb){
     font-size: var(--l);
   }
+  @media(max-width: $spPlus){
+    font-size: var(--lm);
+  }
   &--func{
     &::after{
       content:"";
@@ -159,33 +178,52 @@ html{
       height: 20px;
       padding: 0 1em;
       z-index: -1;
+      @media(max-width: $spPlus){
+        width: 100%;
+      }
     }
 
   }
   &--room{
     &::after{
       width: 8em;
+      @media(max-width: $spPlus){
+        width: 100%;
+      }
     }
+
   }
   &--chat{
     &::after{
       width:10em;
+      @media(max-width: $spPlus){
+        width: 100%;
+      }
     }
   }
   &--schedule{
     &::after{
       width:12em;
+      @media(max-width: $spPlus){
+        width: 100%;
+      }
     }
   }
   &--vr{
     color: var(--white);
     &::after{
       width:6em;
+      @media(max-width: $spPlus){
+        width: 100%;
+      }
     }
   }
   &--etcOpen{
     &::after{
       width:12em;
+      @media(max-width: $spPlus){
+        width: 100%;
+      }
     }
   }
 }
@@ -524,7 +562,6 @@ html{
   color: var(--white);
   @media(max-width: $tb){
     padding: 40px 20px;
-    min-height: 50vh;
   }
   &__inner{
   display: flex;
@@ -535,6 +572,7 @@ html{
   padding-left: 20px;
   padding-right: 20px;
   box-sizing: border-box;
+
   @media(max-width: $miniLt){
     height: 80px;
     padding: 0;
@@ -813,6 +851,9 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     @media(max-width:$miniTb){
       font-size: var(--l);
      }
+     @media(max-width:$spPlus){
+      font-size: var(--lm);
+     }
   }
 }
 .problemBoxOffice__img{
@@ -961,7 +1002,6 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
       }
      
   }
-
 }
 .cv{
   &__ttl{
@@ -980,6 +1020,13 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     &--large{
       font-size: 1.5em;
     }
+  }
+}
+.card__img {
+  &--border{
+    border-width: 1px 1px 0 1px;
+    border-color: #B7BDC8;
+    border-style: solid;
   }
 }
 .voice {
@@ -1048,6 +1095,9 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     }
     @media(max-width: $miniTb){
       font-size: 22px;
+    }
+    @media(max-width: $spPlus){
+      letter-spacing: -0.05em;
     }
   }
   &__company{
