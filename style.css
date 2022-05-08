@@ -624,6 +624,12 @@ html {
   visibility: visible;
 }
 
+.header--sp .header__menu.is-close {
+  animation: hamburger-close .5s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
 .header--sp .header__nav {
   flex-flow: column;
 }
@@ -832,6 +838,26 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.sec--etc.is-etcOpen {
+  animation: etcBtnOff .5s ease;
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+
+.sec--etcOpen {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+
+.sec--etcOpen.is-etcOpen {
+  animation: etcOpen .5s ease;
+  opacity: 1;
+  visibility: visible;
+  display: block;
 }
 
 .sec--cv {
@@ -1577,4 +1603,117 @@ html {
   display: inline-block;
   font-size: 14px;
   margin-bottom: 1rem;
+}
+
+/*animation,js-animation*/
+/*ハンバーガー*/
+@keyframes hamburger-open {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    z-index: 200;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes hamburger-close {
+  0% {
+    z-index: 200;
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/*etc.*/
+/*visibilityとopacityでしっかりかくせば、display:none、blockで高さ調整できるよ*/
+@keyframes etcOpen {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    display: block;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes etcBtnOff {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+  }
+}
+
+/*汎用*/
+@keyframes rightIn {
+  0% {
+    opacity: 0;
+    transform: translateX(25%);
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes leftIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-25%);
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bottomIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  to {
+    opacity: 1;
+  }
 }

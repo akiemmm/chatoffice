@@ -23,7 +23,7 @@
 <link rel="icon" href="./favicon.ico">
 <link rel="apple-touch-icon" sizes="180×180" href="./apple-touch-icon-180×180.png">
 </head>
-<body>
+<body id="wrap">
   <header class="header">
     <div class="header__inner">
       <h1 class="header__logo">
@@ -33,13 +33,13 @@
       </h1>
       <nav class="nav header__nav">
         <ul class="navList header__navList">
-          <li class="navItem header__navItem"><a href="" class="navLink header__navLink">トップ</a></li>
-          <li class="navItem header__navItem"><a href="" class="navLink header__navLink">リモートの壁</a></li>
+          <li class="navItem header__navItem"><a href="#wrap" class="navLink header__navLink">トップ</a></li>
+          <li class="navItem header__navItem"><a href="#problem" class="navLink header__navLink">リモートの壁</a></li>
           <li class="navItem header__navItem
-          "><a href="" class="navLink header__navLink">機能紹介</a></li>
+          "><a href="#features" class="navLink header__navLink">機能紹介</a></li>
           <li class="navItem
-           header__navItem"><a href="" class="navLink header__navLink">利用者の声</a></li>
-          <li class="navItem header__navItem"><a href="" class="navLink header__navLink">料金プラン</a></li>
+           header__navItem"><a href="#voice" class="navLink header__navLink">利用者の声</a></li>
+          <li class="navItem header__navItem"><a href="#plan" class="navLink header__navLink">料金プラン</a></li>
         </ul>
       </nav>
     </div>
@@ -55,10 +55,10 @@
 			<nav class="nav header__nav">
 				<ul class="navList header__navList">
 					<li class="navItem header__navItem"><a href="#wrap" class="navLink header__navLink">トップ</a></li>
-					<li class="navItem header__navItem"><a href="#winter" class="navLink header__navLink">リモートの壁</a></li>
+					<li class="navItem header__navItem"><a href="#problem" class="navLink header__navLink">リモートの壁</a></li>
 					<li class="navItem header__navItem"><a href="#features" class="navLink  header__navLink">機能紹介</a></li>
 					<li class="navItem header__navItem"><a href="#voice" class="navLink header__navLink">利用者の声</a></li>
-					<li class="navItem header__navItem"><a href="#shop" class="navLink header__navLink">料金プラン</a></li>
+					<li class="navItem header__navItem"><a href="#plan" class="navLink header__navLink">料金プラン</a></li>
 				</ul>
         <a href="#wrap" class="btn btn--head"><span class="btn__inner">無料で始める</span></a>
 			</nav>
@@ -84,7 +84,7 @@
       </div>
     </div>
   </section>
-  <section class="sec sec--problem problem">
+  <section id="problem" class="sec sec--problem problem">
     <div class="container">
       <h2 class="ttl ttl--problem">リアルと、リモートの壁</h2>
       <div class="problem__box">
@@ -142,7 +142,7 @@
       </p>
     </div>
   </section>
-  <section class="sec sec--room room">
+  <section id="features" class="sec sec--room room">
     <div class="container">
       <h2 class="ttl ttl--func ttl--room">ルーム/会話</h2><!-- after要素使って下線を引く -->
       <div class="card">
@@ -308,7 +308,7 @@
         さらに…<br>
         こんなユニークな機能も<br class="br--miniTb">あるんです
       </h2>
-      <button id="etc" class="btn btn--etc"><span class="btn__inner">もっと見る</span>
+      <button id="etcBtn" class="btn btn--etc"><span class="btn__inner">もっと見る</span>
     </button>
   </section>
   <section class="sec sec--etcOpen etcOpen">
@@ -370,7 +370,7 @@
         <a href="#wrap" class="btn btn--cv"><span class="btn__inner">無料で始める</span></a>
     </div>
   </section>
-  <section class="sec sec--voice voice">
+  <section id="voice" class="sec sec--voice voice">
     <div class="container">
       <h2 class="ttl">利用者の声</h2>
       <div class="voice__box voice__box--01">
@@ -411,7 +411,7 @@
       </div>
     </div>
   </section>
-  <section class="sec sec--plan plan">
+  <section id="plan" class="sec sec--plan plan">
     <div class="container">
       <h2 class="ttl">料金・プラン</h2>
       <div class="card card--plan">
@@ -471,5 +471,6 @@
       <div class="footer__copyright">©CHAT OFFICE</div>
     </div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>
