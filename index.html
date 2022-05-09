@@ -70,10 +70,10 @@
 	</header>
   <section class="sec sec--mv mv">
     <div class="mv__inner">
-      <h2 class="mv__title">リアルと<br class="br--tb">リモートの壁を、<br>ぶっ壊す！！</h2>
-      <img src="img/pc/mv_01.png" alt="" class="mv__img mv__img--01">
-      <img src="img/pc/mv_02.png" alt="" class="mv__img mv__img--02">
-      <p class="mv__text">リアルとリモートの垣根を超えた<br>バーチャルオフィス。</p>
+      <h2 id="mvTitle" class="mv__title">リアルと<br class="br--tb">リモートの壁を、<br>ぶっ壊す！！</h2>
+      <img id="mvImg01" src="img/pc/mv_01.png" alt="" class="mv__img mv__img--01">
+      <img id="mvImg02" src="img/pc/mv_02.png" alt="" class="mv__img mv__img--02">
+      <p id="mvText" class="mv__text">リアルとリモートの垣根を超えた<br>バーチャルオフィス。</p>
     </div>
   </section>
   <section class="sec sec--lead lead">
@@ -86,8 +86,8 @@
   </section>
   <section id="problem" class="sec sec--problem problem">
     <div class="container">
-      <h2 class="ttl ttl--problem">リアルと、リモートの壁</h2>
-      <div class="problem__box">
+      <h2 class="ttl ttl--problem js-animation">リアルと、リモートの壁</h2>
+      <div class="problem__box js-animation">
         <div class="problem__boxOffice">
           <img src="img/pc/problem_01.png" alt="困っている人（オフィス）" class="problemBoxOffice__img problemBoxOffice__img--people pc">
           <img src="img/pc/problemballoon_01.png" alt="すぐにこのメモ　画面の向こうの人に　渡せたらなぁ" class="problemBoxOffice__img problemBoxOffice__img--balloon01 pc">
@@ -105,13 +105,13 @@
           <img src="img/tb/problem_tb_02.png" alt="" class="problemBoxRemote__img--balloonTb tb">
         </div>
       </div>
-      <p class="problem__text">まだまだあるある！<br>リモートワークの壁</p>
+      <p class="problem__text js-animation">まだまだあるある！<br>リモートワークの壁</p>
     </div>
   </section>
   <section class="sec sec--again again">
     <div class="container">
       <h2 class="ttl ttl--again">あのオフィスの感覚を、<br class="br--tb">もう一度。</h2>
-      <div class="again__box again__box--pc pc">
+      <div class="again__box again__box--pc pc js-animation">
         <div class="again__boxOffice">
           <img src="img/pc/again_01.png" alt="笑顔（オフィス）" class="againBoxOffice__img--people">
         </div>
@@ -120,7 +120,7 @@
           <img src="img/pc/again_02.png" alt="笑顔（リモート）" class="againBoxRemote__img--people">
         </div>
       </div>
-      <p class="again__text">
+      <p class="again__text js-animation">
         そんなとき…<br class="br--sp">限りなくリアルに近い<br class="br--miniLt">オフィスが誕生しました。<br>
         気軽に話したい、<br class="br--miniTb br--noSp">気軽に<br class="br--sp">コミュニケーションとって<br>
         会社間のやりとりを<br class="br--sp">円滑に進めたい。<br>
@@ -144,8 +144,8 @@
   </section>
   <section id="features" class="sec sec--room room">
     <div class="container">
-      <h2 class="ttl ttl--func ttl--room">ルーム/会話</h2><!-- after要素使って下線を引く -->
-      <div class="card">
+      <h2 class="ttl ttl--func ttl--room js-animation">ルーム/会話</h2><!-- after要素使って下線を引く -->
+      <div class="card js-animation">
         <ul class="card__list">
           <li class="card__item">
             <figure class="card__imgBox">
@@ -168,7 +168,7 @@
               </p>
             </div>
           </li>
-          <li class="card__item">
+          <li class="card__item js-animation">
             <figure class="card__imgBox">
               <img src="img/pc/room_03.jpg" alt="アイコン・ひと言テキスト対応"  class="card__img card__img--pc pc">
               <img src="img/tb/room_tb_03.jpg" alt="アイコン・ひと言テキスト対応" class="card__img card__img--tb tb">
@@ -195,7 +195,7 @@
   <section class="sec sec--chat chat">
     <div class="container">
       <h2 class="ttl ttl--func ttl--chat">会話中/会議中機能</h2><!-- after要素使って下線を引く -->
-      <div class="card">
+      <div class="card js-animation">
         <ul class="card__list">
           <li class="card__item">
             <figure class="card__imgBox">
@@ -245,7 +245,7 @@
   <section class="sec sec--schedule schedule">
     <div class="container">
       <h2 class="ttl ttl--func ttl--schedule">スケジュール/進捗管理</h2><!-- after要素使って下線を引く -->
-      <div class="card">
+      <div class="card js-animation">
         <ul class="card__list">
           <li class="card__item">
             <figure class="card__imgBox">
@@ -275,7 +275,7 @@
   <section class="sec sec--vr vr">
     <div class="container">
       <h2 class="ttl ttl--func ttl--vr">VR機能</h2><!-- after要素使って下線を引く -->
-      <div class="card card--vr">
+      <div class="card card--vr js-animation">
         <ul class="card__list">
           <li class="card__item">
             <figure class="card__imgBox">
@@ -314,7 +314,7 @@
   <section class="sec sec--etcOpen etcOpen">
     <div class="container">
       <h2 class="ttl ttl--func ttl--etcOpen">さらにこんな機能も!</h2><!-- after要素使って下線を引く -->
-      <div class="card">
+      <div class="card js-animation">
         <ul class="card__list">
           <li class="card__item">
             <figure class="card__imgBox">
@@ -365,7 +365,7 @@
   </section>
   <section class="sec sec--cv sec--cv01 cv cv01">
     <div class="container">
-      <h2 class="ttl ttl--cv cv__ttl">まずは<br>
+      <h2 class="ttl ttl--cv cv__ttl js-animation">まずは<br>
         <span class="cv__ttl--large">無料</span>でお試しください!</h2>
         <a href="#wrap" class="btn btn--cv"><span class="btn__inner">無料で始める</span></a>
     </div>
@@ -373,7 +373,7 @@
   <section id="voice" class="sec sec--voice voice">
     <div class="container">
       <h2 class="ttl">利用者の声</h2>
-      <div class="voice__box voice__box--01">
+      <div class="voice__box voice__box--01 js-animation">
         <figure class="voice__imgBox">
           <img src="img/pc/voice_01.jpg" alt="Freedom Office様" class="voice__img--pc pc">
           <img src="img/tb/voice_tb_01.jpg" alt="Freedom Office様" class="voice__img--tb tb">        
@@ -385,7 +385,7 @@
           <p class="voice__text">全員がリモートなのでコミュニケーションと円滑な業務に悩みを抱えていました。思い切ってVRプランを選択してみましたが、ちょっとした会話のニュアンスの受け取り方が全然違う！まるでリアル（笑）業務もすごく効率的になり、まさに改革です！VRヘッドセットかぶってるとき、物にぶつからないようにしようと必死ですけどね(笑い)</p>
         </div>
       </div>
-      <div class="voice__box voice__box--02">
+      <div class="voice__box voice__box--02 js-animation">
         <figure class="voice__imgBox voice__imgBox--02">
           <img src="img/pc/voice_02.jpg" alt="Everywhere Sales様" class="voice__img--pc pc">
           <img src="img/tb/voice_tb_02.jpg" alt="Everywhere Sales様" class="voice__img--tb tb"> 
@@ -397,7 +397,7 @@
           </p>
         </div>
       </div>
-      <div class="voice__box voice__box--03">
+      <div class="voice__box voice__box--03 js-animation">
         <figure class="voice__imgBox">
           <img src="img/pc/voice_03.jpg" alt="own Company様" class="voice__img--pc pc">
           <img src="img/tb/voice_tb_03.jpg" alt="own Company様" class="voice__img--tb tb">     
@@ -414,7 +414,7 @@
   <section id="plan" class="sec sec--plan plan">
     <div class="container">
       <h2 class="ttl">料金・プラン</h2>
-      <div class="card card--plan">
+      <div class="card card--plan js-animation">
         <ul class="card__list">
           <li class="card__item">
             <div class="card__inner">
@@ -449,7 +449,7 @@
   </section>
   <section class="sec sec--cv sec--cv02 cv cv02">
     <div class="container">
-      <h2 class="ttl ttl--cv cv__ttl cv__ttl--02">どの料金プランにするか<br class="br--miniTb">迷ったときは<br>
+      <h2 class="ttl ttl--cv cv__ttl cv__ttl--02 js-animation">どの料金プランにするか<br class="br--miniTb">迷ったときは<br>
         まず<span class="cv__ttl--large">無料</span>でお試しください！<br>
         (VR貸し出しもしております)</h2>
         <a href="#wrap" class="btn btn--cv"><span class="btn__inner">無料で始める</span></a>

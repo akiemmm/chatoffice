@@ -778,6 +778,13 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     transform: translateX(-50%);
     height :100vh;
     object-fit: cover;
+    opacity: 0;
+    &--01{
+      animation: fadeIn .5s forwards;
+      }
+    &--02{
+      animation: myImg02 .5s ease .5s forwards;
+    }
     }
     &__title{
       position: absolute;
@@ -792,6 +799,9 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
       font-weight: bold;
       letter-spacing: -0.1em;
       z-index:10;
+      opacity: 0;
+      animation: fadeIn .5s ease 1s forwards;
+
       @media(max-width: 1400px){
         font-size: 100px;
       }
@@ -822,6 +832,8 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
       color: var(--white);
       letter-spacing: -0.08em;
       font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro",  "MS Pゴシック", "MS PGothic", sans-serif;
+      animation: fadeIn .5s ease 1.5s forwards;
+      opacity: 0;
       @media(max-width: $miniLt){
         font-size: var(--l);
         bottom: 20px;
@@ -833,6 +845,7 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
       @media(max-width: $spPlus){
         font-size: var(--m);
       }
+    
     }
 }
 
@@ -1301,6 +1314,21 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
     visibility: hidden;
   }
 }
+/*mv*/
+
+@keyframes myImg02 {
+  0%{
+    opacity: 0;
+    transform: translate(-50%, -10%);
+  }
+  50%{
+    opacity: 0.5;
+  }
+  to{
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
 /*etc.*/
 /*visibilityとopacityでしっかりかくせば、display:none、blockで高さ調整できるよ*/
 @keyframes etcOpen {
@@ -1352,6 +1380,19 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
 	to{
     opacity: 1;
     transform: translateX(0);
+	}
+}
+@keyframes topIn{
+	0%{
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  50%{
+    opacity: 0.5;
+	}
+	to{
+    opacity: 1;
+    transform: translateY(0);
 	}
 }
 @keyframes bottomIn{

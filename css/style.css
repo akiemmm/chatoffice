@@ -784,6 +784,15 @@ html {
   height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
+  opacity: 0;
+}
+.mv__img--01 {
+  -webkit-animation: fadeIn 0.5s forwards;
+          animation: fadeIn 0.5s forwards;
+}
+.mv__img--02 {
+  -webkit-animation: myImg02 0.5s ease 0.5s forwards;
+          animation: myImg02 0.5s ease 0.5s forwards;
 }
 .mv__title {
   position: absolute;
@@ -798,6 +807,9 @@ html {
   font-weight: bold;
   letter-spacing: -0.1em;
   z-index: 10;
+  opacity: 0;
+  -webkit-animation: fadeIn 0.5s ease 1s forwards;
+          animation: fadeIn 0.5s ease 1s forwards;
 }
 @media (max-width: 1400px) {
   .mv__title {
@@ -840,6 +852,9 @@ html {
   color: var(--white);
   letter-spacing: -0.08em;
   font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "MS Pゴシック", "MS PGothic", sans-serif;
+  -webkit-animation: fadeIn 0.5s ease 1.5s forwards;
+          animation: fadeIn 0.5s ease 1.5s forwards;
+  opacity: 0;
 }
 @media (max-width: 1024px) {
   .mv__text {
@@ -1438,6 +1453,33 @@ html {
     visibility: hidden;
   }
 }
+/*mv*/
+@-webkit-keyframes myImg02 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -10%);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+@keyframes myImg02 {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -10%);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
 /*etc.*/
 /*visibilityとopacityでしっかりかくせば、display:none、blockで高さ調整できるよ*/
 @-webkit-keyframes etcOpen {
@@ -1535,6 +1577,32 @@ html {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+@-webkit-keyframes topIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes topIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 @-webkit-keyframes bottomIn {
