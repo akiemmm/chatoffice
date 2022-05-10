@@ -44,6 +44,7 @@ $sp: 375px;
   width: 100%;
   font-size: var(--lm);
   margin: 0 auto;
+  box-shadow: 0 0 10px 5px rgba(0,0,0,0.25);
 }
 @mixin btn--etc{
   background: var(--subColor);
@@ -52,6 +53,7 @@ $sp: 375px;
   width: 100%;
   font-size: var(--l);
   margin: 0 auto;
+  box-shadow: 0 0 10px 5px rgba(0,0,0,0.25);
 }
 @mixin btn--plan{
   background: var(--mainColor);
@@ -83,7 +85,7 @@ html{
 .sp{
   display: none;
   @media (max-width:$spPlus){
-    ditblay: block;
+    display: block;
   }
 }
 .br{
@@ -157,7 +159,7 @@ html{
   position: relative;
   font-size: var(--xl);
   font-weight: bold;
-  margin-bottom: 40px;
+ margin: 0 auto 40px;
   text-align: center;
   z-index: 1;
   @media(max-width: $miniTb){
@@ -185,6 +187,7 @@ html{
 
   }
   &--room{
+    width:8em;
     &::after{
       width: 8em;
       @media(max-width: $spPlus){
@@ -194,6 +197,7 @@ html{
 
   }
   &--chat{
+    width:10em;
     &::after{
       width:10em;
       @media(max-width: $spPlus){
@@ -202,6 +206,7 @@ html{
     }
   }
   &--schedule{
+    width:12em;
     &::after{
       width:12em;
       @media(max-width: $spPlus){
@@ -211,6 +216,7 @@ html{
   }
   &--vr{
     color: var(--white);
+    width:6em;
     &::after{
       width:6em;
       @media(max-width: $spPlus){
@@ -219,6 +225,7 @@ html{
     }
   }
   &--etcOpen{
+    width:12em;
     &::after{
       width:12em;
       @media(max-width: $spPlus){
@@ -262,6 +269,7 @@ html{
   &__item{
     max-width:520px;
     width: calc(50% - 20px);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, .25);
     @media (max-width: $tb){
       max-width: 600px;
       width: 100%;
@@ -463,6 +471,7 @@ html{
   width: 100%;
   padding: 20px 40px; 
   box-sizing: border-box;
+  box-shadow: 0 5px 5px 2px rgba(0,0,0,0.25);
   @media(max-width: $miniLt){
     display: none;
   }
@@ -1290,6 +1299,145 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
 }
 
 /*animation,js-animation*/
+.ttl.js-animation{
+  opacity: 0;
+  overflow: hidden;
+  &::after{
+    opacity: 0;
+    transform:translateX(-100%);
+  }
+  &.is-animation{
+    animation: bottomIn .5s ease forwards;
+    transform: translateY(0);
+    &::after{
+      animation: leftInTtlBorder .5s ease forwards;
+      transform:translateX(-50%);
+    }
+  }
+}
+.subTtl.js-animation{
+  opacity: 0;
+  &.is-animation{
+    animation: bottomIn .5s ease .25s forwards;
+    transform: translateY(0);
+  }
+}
+
+.problem__box{
+  opacity: 0;
+  &.is-animation{
+  animation: bottomIn 0.5s ease .5s forwards;
+  transform: translateY(0);
+}
+}
+.problemBoxOffice__img--balloon01{
+  opacity: 0;
+  transform: scale(0);
+  &.is-animation{
+  animation: scaleUpFadeIn 0.5s ease .75s forwards;
+  transform: scale(1);
+}
+}
+.problemBoxOffice__img--balloon02{
+  opacity: 0;
+  transform: scale(0);
+  &.is-animation{
+  animation: scaleUpFadeIn 0.5s ease 1.25s forwards;
+}
+}
+.problemBoxOffice__img--balloon03{
+  opacity: 0;
+  transform: scale(0) translateY(-50%);
+  &.is-animation{
+  animation: scaleUpFadeInLast 0.5s ease 1.75s forwards;
+}
+}
+.problemBoxRemote__img--balloon01{
+  opacity: 0;
+  transform: scale(0);
+  &.is-animation{
+  animation: scaleUpFadeIn 0.5s ease 1s forwards;
+
+}
+}
+.problemBoxRemote__img--balloon02{
+  opacity: 0;
+  transform: scale(0);
+  &.is-animation{
+  animation: scaleUpFadeIn 0.5s ease 1.5s forwards;
+
+}
+}
+.problemBoxRemote__img--balloon03{
+  opacity: 0;
+  transform: scale(0);
+  &.is-animation{
+  animation: scaleUpFadeInLast 0.5s ease 2s forwards;
+}
+}
+.problemBoxOffice__img--balloonTb{
+  opacity: 0;
+  transform: scale(0);
+  &.is-animation{
+  animation: scaleUpFadeInTb 1s ease .5s forwards;
+
+}
+}
+.problemBoxRemote__img--balloonTb{
+  opacity: 0;
+  transform: scale(0);
+  &.is-animation{
+  animation: scaleUpFadeInTb 1s ease 1s forwards;
+}
+}
+
+
+.problem__text{
+  opacity: 0;
+  &.is-animation{
+  animation: bottomIn .5s ease .5s forwards;
+  transform: translateY(0);
+}
+}
+.again__box {
+  opacity: 0;
+  &.is-animation{
+  animation: bottomIn .5s ease .5s forwards;
+  transform: translateY(0);
+  }
+}
+.again__text {
+  opacity: 0;
+  &.is-animation{
+  animation: bottomIn .5s ease 1s forwards;
+  transform: translateY(0);
+  }
+}
+.about__text {
+  opacity: 0;
+  &.is-animation{
+  animation: bottomIn .5s ease .75s forwards;
+  transform: translateY(0);
+  }
+}
+.card__list {
+  opacity: 0;
+  &.is-animation{
+  animation: bottomIn .5s ease .5s forwards;
+  transform: translateY(0);
+  }
+}
+.voice__box{
+  opacity: 0;
+  &.is-animation{
+    animation: bottomIn .5s ease .5s forwards;
+    transform: translateY(0);
+    }
+  }
+
+
+
+
 //@keyframe
 /*ハンバーガー*/
 @keyframes hamburger-open {
@@ -1335,11 +1483,12 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
   0% {
     visibility: hidden;
     opacity: 0;
-    display: block;
+
   }
   100% {
     visibility: visible;
     opacity: 1;
+    display: block;
   }
 }
 @keyframes etcBtnOff {
@@ -1369,13 +1518,14 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
 		transform: translateX(0);
 	}
 }
+
 @keyframes leftIn{
 	0%{
     opacity: 0;
     transform: translateX(-25%);
   }
   50%{
-    opacity: 1;
+    opacity: 0;
 	}
 	to{
     opacity: 1;
@@ -1393,6 +1543,19 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
 	to{
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes leftInTtlBorder{
+	0%{
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  50%{
+    opacity: 1;
+	}
+	to{
+    opacity: 1;
+    transform: translateX(-50%);
 	}
 }
 @keyframes bottomIn{
@@ -1405,7 +1568,7 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
 	}
 	to{
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
 	}
 }
 
@@ -1424,5 +1587,36 @@ radial-gradient(at 90% 10%, #6ac3cc 0px, transparent 50%);
 	}
 	to{
     opacity: 1;
+	}
+}
+@keyframes scaleUpFadeIn{
+	0%{
+    opacity: 0;
+    transform: scale(0);
+  }
+	to{
+    opacity: 1;
+    transform: scale(1);
+	}
+}
+@keyframes scaleUpFadeInLast{
+	0%{
+    opacity: 0;
+    transform: scale(0) translateY(-50%);
+  }
+	to{
+    opacity: 1;
+    transform: scale(1) translateY(-50%);
+	}
+}
+
+@keyframes scaleUpFadeInTb{
+	0%{
+    opacity: 0;
+    transform: scale(0) translateY(25%);
+  }
+	to{
+    opacity: 1;
+    transform: scale(1) translateY(0);
 	}
 }
