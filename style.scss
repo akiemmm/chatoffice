@@ -539,14 +539,11 @@ html{
     padding: 104px 40px 40px 40px ;
     background: var(--subColor);
     &.is-open{
-      animation: hamburger-open .5s ease;
-      opacity: 1;
-      visibility: visible;
+      animation: hamburger-open .5s ease forwards;
     }
     &.is-close{
-      animation: hamburger-close .5s ease;
-      opacity: 0;
-      visibility: hidden;
+      animation: hamburger-close .5s ease forwards;
+
     }
   }
 

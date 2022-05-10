@@ -640,15 +640,11 @@ html {
 }
 
 .header--sp .header__menu.is-open {
-  animation: hamburger-open .5s ease;
-  opacity: 1;
-  visibility: visible;
+  animation: hamburger-open .5s ease forwards;
 }
 
 .header--sp .header__menu.is-close {
-  animation: hamburger-close .5s ease;
-  opacity: 0;
-  visibility: hidden;
+  animation: hamburger-close .5s ease forwards;
 }
 
 .header--sp .header__nav {

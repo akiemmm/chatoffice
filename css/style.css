@@ -559,16 +559,12 @@ html {
   background: var(--subColor);
 }
 .header--sp .header__menu.is-open {
-  -webkit-animation: hamburger-open 0.5s ease;
-          animation: hamburger-open 0.5s ease;
-  opacity: 1;
-  visibility: visible;
+  -webkit-animation: hamburger-open 0.5s ease forwards;
+          animation: hamburger-open 0.5s ease forwards;
 }
 .header--sp .header__menu.is-close {
-  -webkit-animation: hamburger-close 0.5s ease;
-          animation: hamburger-close 0.5s ease;
-  opacity: 0;
-  visibility: hidden;
+  -webkit-animation: hamburger-close 0.5s ease forwards;
+          animation: hamburger-close 0.5s ease forwards;
 }
 .header--sp .header__nav {
   flex-flow: column;

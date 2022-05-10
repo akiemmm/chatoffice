@@ -78,9 +78,9 @@ const close = () => {
   spMenu.classList.remove('is-open');
   spMenu.classList.add('is-close');
   // メニューが開いたことを示すクラスをはずす
-  html.classList.remove('is-menuOpen')
+  html.classList.remove('is-menuOpen');
   // スクロール位置を開いた時の位置へ戻す
-  window.scrollTo(0, scrollpos)
+  window.scrollTo(0, scrollpos);
 }
 
 document.getElementById('icon--close').addEventListener('click', () => {
