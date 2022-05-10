@@ -111,12 +111,10 @@ etcBtn.addEventListener('click', () => {
 });
 
 
-//スクロールアニメーション
-
 //IntersectionObserver
 //仮にoptionを設定
 const option = {
-  threshold: [0.05]
+  threshold: [0.1]
 };
 //is-active
 //コールバックを設定
