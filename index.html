@@ -8,7 +8,6 @@
   <meta property="og:url" content="https://akiemunakata.net/chatoffice" />
 <meta property="og:title" content="CHAT OFFICE（架空のバーチャルオフィスLPサイト）" />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="画像URL" /><!-- 後で必ず設定すること -->
 <meta property="og:site_name" content="CHAT OFFICE" />
 <meta property="og:local" content="ja_JP" />
 
@@ -17,11 +16,9 @@
 <meta name="twitter:site" content="@akie_mmm" />
 <meta name="twitter:description" content="CHAT OFFICEは、akiemunakataが作成した架空のバーチャルオフィスLPサイトです。" />
 <meta name="twitter:title" content="CHAT OFFICE（架空のバーチャルオフィスLPサイト）" />
-<meta name="twitter:image" content="画像URL" /><!-- 後で必ず設定すること -->
 <link rel="stylesheet" href="css/custom-css-reset.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="./favicon.ico">
-<link rel="apple-touch-icon" sizes="180×180" href="./apple-touch-icon-180×180.png">
 </head>
 <body id="wrap">
   <header class="header">
@@ -35,10 +32,8 @@
         <ul class="navList header__navList">
           <li class="navItem header__navItem"><a href="#wrap" class="navLink header__navLink">トップ</a></li>
           <li class="navItem header__navItem"><a href="#problem" class="navLink header__navLink">リモートの壁</a></li>
-          <li class="navItem header__navItem
-          "><a href="#features" class="navLink header__navLink">機能紹介</a></li>
-          <li class="navItem
-           header__navItem"><a href="#voice" class="navLink header__navLink">利用者の声</a></li>
+          <li class="navItem header__navItem"><a href="#features" class="navLink header__navLink">機能紹介</a></li>
+          <li class="navItem header__navItem"><a href="#voice" class="navLink header__navLink">利用者の声</a></li>
           <li class="navItem header__navItem"><a href="#plan" class="navLink header__navLink">料金プラン</a></li>
         </ul>
       </nav>
@@ -70,10 +65,10 @@
 	</header>
   <section class="sec sec--mv mv">
     <div class="mv__inner">
-      <h2 class="mv__title">リアルと<br class="br--tb">リモートの壁を、<br>ぶっ壊す！！</h2>
-      <img src="img/pc/mv_01.png" alt="" class="mv__img mv__img--01">
-      <img src="img/pc/mv_02.png" alt="" class="mv__img mv__img--02">
-      <p class="mv__text">リアルとリモートの垣根を超えた<br>バーチャルオフィス。</p>
+      <h2 id="mvTitle" class="mv__title">リアルと<br class="br--tb">リモートの壁を、<br>ぶっ壊す！！</h2>
+      <img id="mvImg01" src="img/pc/mv_01.png" alt="" class="mv__img mv__img--01">
+      <img id="mvImg02" src="img/pc/mv_02.png" alt="" class="mv__img mv__img--02">
+      <p id="mvText" class="mv__text">リアルとリモートの垣根を超えた<br>バーチャルオフィス。</p>
     </div>
   </section>
   <section class="sec sec--lead lead">
@@ -168,7 +163,7 @@
               </p>
             </div>
           </li>
-          <li class="card__item">
+          <li class="card__item js-animation">
             <figure class="card__imgBox">
               <img src="img/pc/room_03.jpg" alt="アイコン・ひと言テキスト対応"  class="card__img card__img--pc pc">
               <img src="img/tb/room_tb_03.jpg" alt="アイコン・ひと言テキスト対応" class="card__img card__img--tb tb">
@@ -273,7 +268,7 @@
     </div>
   </section>
   <section class="sec sec--vr vr">
-    <div class="container ">
+    <div class="container">
       <h2 class="ttl ttl--func ttl--vr js-animation">VR機能</h2><!-- after要素使って下線を引く -->
       <div class="card card--vr">
         <ul class="card__list js-animation">
@@ -315,6 +310,7 @@
     <div class="container">
       <h2 class="ttl ttl--func ttl--etcOpen js-animation">さらにこんな機能も!</h2><!-- after要素使って下線を引く -->
       <div class="card">
+
         <ul class="card__list js-animation">
           <li class="card__item">
             <figure class="card__imgBox">
@@ -461,10 +457,10 @@
       <div class="footer__company">CHAT OFFICE INC.</div>
       <nav class="nav footer__nav">
         <ul class="navList footer__navList">
-          <li class="navItem footer__navItem"><a href="" class="navLink footer__navLink">お問い合わせ</a></li>
-          <li class="navItem footer__navItem"><a href="" class="navLink footer__navLink">利用規約</a></li>
-          <li class="navItem footer__navItem"><a href="" class="navLink footer__navLink">特定商取引法に基づく表記</a></li>
-          <li class="navItem footer__navItem"><a href="" class="navLink footer__navLink">プライバシーポリシー</a></li>
+          <li class="navItem footer__navItem"><a href="#wrap" class="navLink footer__navLink">お問い合わせ</a></li>
+          <li class="navItem footer__navItem"><a href="#wrap" class="navLink footer__navLink">利用規約</a></li>
+          <li class="navItem footer__navItem"><a href="#wrap" class="navLink footer__navLink">特定商取引法に基づく表記</a></li>
+          <li class="navItem footer__navItem"><a href="#wrap" class="navLink footer__navLink">プライバシーポリシー</a></li>
         </ul>
       </nav>
     </div>

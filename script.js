@@ -78,9 +78,9 @@ const close = () => {
   spMenu.classList.remove('is-open');
   spMenu.classList.add('is-close');
   // メニューが開いたことを示すクラスをはずす
-  html.classList.remove('is-menuOpen')
+  html.classList.remove('is-menuOpen');
   // スクロール位置を開いた時の位置へ戻す
-  window.scrollTo(0, scrollpos)
+  window.scrollTo(0, scrollpos);
 }
 
 document.getElementById('icon--close').addEventListener('click', () => {
@@ -111,10 +111,15 @@ etcBtn.addEventListener('click', () => {
 });
 
 
+
+
+
+//スクロールアニメーション
+
 //IntersectionObserver
 //仮にoptionを設定
 const option = {
-  threshold: [0.1]
+  threshold: [0.05]
 };
 //is-active
 //コールバックを設定
